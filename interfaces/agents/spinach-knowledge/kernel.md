@@ -312,7 +312,7 @@
 | `kernel/plotting/cylgrid.m` | `cylgrid(zmin,zmax,rmax)` | Draws a cylindrical grid with 10% spacing added around the indicated data extent values. Syntax: cylgrid(zmin,zmax,rmax) | 99 |
 | `kernel/plotting/efg_display.m` | `efg_display(props,atoms,scaling,conmatrix,options)` | Electric field gradient tensors and their eigensystems. Two styles are implemented: A. Ellipsoids (symmetric tensors onl | 308 |
 | `kernel/plotting/fft_freq_axis.m` | `[f_shift,f,df]=fft_freq_axis(npts,dt,zf)` | Frequency axis for FFT with optional zero-filling. Syntax: [f_shift,f,df,nfft]=fft_freq_axis(npts,dt,zf) Parameters: npt | 74 |
-| `kernel/plotting/fig2tiles.m` | `[fig_obj,tile_obj]=fig2tiles(fig_files,fig_size)` | Combines Matlab figure files into a single tiled figure. Syntax: [fig_obj,tile_obj]=fig2tiles(fig_files,fig_size) Parame | 396 |
+| `kernel/plotting/fig2tiles.m` | `[fig_obj,tile_obj]=fig2tiles(fig_files,fig_size)` | Combines Matlab figure files into a single tiled figure. Syntax: [fig_obj,tile_obj]=fig2tiles(fig_files,fig_size) Parame | 409 |
 | `kernel/plotting/ft_axis.m` | `ax=ft_axis(offset,sweep,npoints)` | Fourier transform axis ticks generator that accounts for the periodicity and correctly folds the edge frequency. Syntax: | 65 |
 | `kernel/plotting/hfc_display.m` | `hfc_display(props,atoms,scaling,conmatrix,options)` | Draws hyperfine tensors and their eigensystems. Two styles are implemented: A. Ellipsoids (symmetric tensors only): 1. A | 315 |
 | `kernel/plotting/ifft_time_axis.m` | `[t_shift,t,dt]=ifft_time_axis(npts,df,zf)` | Time axis for IFFT with optional zero-filling. Syntax: [t_shift,t,dt,nifft]=ifft_time_axis(npts,df,zf) Parameters: npts  | 71 |
@@ -322,6 +322,7 @@
 | `kernel/plotting/kfigure.m` | `handle=kfigure(varargin)` | Resets the stupid ass figure defaults in R2025a and later back to sensible values. | 27 |
 | `kernel/plotting/kgrid.m` | `kgrid()` | A replacement for the 'grid' command in Matlab that produces grey (rather than black-and-transparent) grid lines that ar | 30 |
 | `kernel/plotting/klegend.m` | `leg_obj=klegend(varargin)` | House style settings for Matlab figures; a product of much experience with academic publication aesthetics. Syntax: leg_ | 39 |
+| `kernel/plotting/kletter.m` | `kletter(letter_label)` | Draws an academic journal style letter label in the top left corner of the current axis set. The label is placed inside the | 86 |
 | `kernel/plotting/ksgtitle.m` | `ksgtitle(x)` | House style settings for Matlab figures; a product of much experience with academic publication aesthetics. Syntax: ksgt | 44 |
 | `kernel/plotting/ktitle.m` | `ktitle(x)` | House style settings for Matlab figures; a product of much experience with academic publication aesthetics. Syntax: ktit | 46 |
 | `kernel/plotting/kxlabel.m` | `kxlabel(varargin)` | House style settings for Matlab figures; a product of much experience with academic publication aesthetics. Syntax: kxla | 34 |
@@ -526,6 +527,7 @@
 | `kernel/utilities/vvpert.m` | `[Ep,G]=vvpert(E0,H1,order)` | Van Vleck perturbation theory, following Shavitt and Redmon, but excluding the quasi-degenerate split. Syntax: [Ep,G]=vv | 126 |
 | `kernel/utilities/which_subst.m` | `subst=which_subst(spin_system,spins)` | Finds out which substance hosts the specified spins; throws an error if there is more than one. Syntax: subst=which_subs | 62 |
 | `kernel/utilities/wigner.m` | `D=wigner(l,alp,bet,gam)` | Wigner D matrices, defined as (Brink & Satchler, Eq 2.13): D=expm(-1i*Lz*alp)*expm(-1i*Ly*bet)*expm(-1i*Lz*gam); where L | 107 |
+| `kernel/utilities/wigner_fock.m` | `W=wigner_fock(rho,alpha)` | Wigner function of a bosonic mode state given as a density matrix in a truncated Fock basis, evaluated at the specified  | 85 |
 | `kernel/utilities/wigner_3j.m` | `w=wigner_3j(j1,m1,j2,m2,j3,m3)` | Calculates Wigner 3j-symbols. Syntax: w=wigner_3j(j1,m1,j2,m2,j3,m3) If physically inadmissible indices are supplied, a  | 67 |
 | `kernel/utilities/wigner_6j.m` | `w=wigner_6j(j1,j2,j3,j4,j5,j6)` | Wigner 6j-symbols. Syntax: w=wigner_6j(j1,j2,j3,j4,j5,j6) If physically inadmissible indices are supplied, a zero is ret | 90 |
 | `kernel/utilities/xyz2dd.m` | `[d,alp,bet,gam,M]=xyz2dd(r1,r2,isotope1,isotope2)` | Converts coordinate specification of the dipolar interaction into the dipolar interaction constant, three Euler angles,  | 97 |
