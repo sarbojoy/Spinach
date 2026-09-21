@@ -1,11 +1,11 @@
 # Spinach code index: examples
 
 - Source root: `/home/kuprov/.openclaw/workspace/Spinach`
-- Source commit: `f053e432a61d7144f3946d73d0a672e3ccfc3fc5`
+- Source commit: `ac6136149e438077587b302a1e92d0371b099f20`
 - Source tree state: `clean`
 - Path set: tracked MATLAB files from `git ls-files '*.m'`; untracked MATLAB files are excluded.
-- Files indexed: **756** MATLAB files
-- Generated: 2026-08-30T02:52:31
+- Files indexed: **761** MATLAB files
+- Generated: 2026-09-16T03:34:56
 
 | File | Signature | Summary | LOC |
 |---|---|---|---:|
@@ -502,7 +502,7 @@
 | `examples/nmr_solids/case_studies/magic_angle_calibration.m` | `magic_angle_calibration()` | Magic angle is usually calibrated using KBr powder. When the angle is not correctly set, the spinning sideband pat- tern | 84 |
 | `examples/nmr_solids/case_studies/mas_powder_dd_nqi.m` | `mas_powder_dd_nqi()` | Powder magic angle spinning spectrum of a pair of dipole-coupled quadrupolar nuclei; this is apparently something that o | 67 |
 | `examples/nmr_solids/case_studies/mathies_14n_13c/mas_powder_gly_13c.m` | `mas_powder_gly_13c()` | 13C MAS spectrum of glycine powder (assuming decoupling of 1H), computed using the Fokker-Planck MAS formalism and a sph | 103 |
-| `examples/nmr_solids/case_studies/mathies_14n_13c/mas_powder_gly_14n.m` | `mas_powder_gly_14n()` | 14N MAS spectrum of glycine powder (assuming decoupling of 1H and 13C), computed using the Fokker-Planck MAS formalism a | 91 |
+| `examples/nmr_solids/case_studies/mathies_14n_13c/powder_gly_14n.m` | `powder_gly_14n()` | Static 14N powder spectrum of glycine (assuming decoupling of 1H and 13C), computed on a spherical grid from CASTEP tensors | 91 |
 | `examples/nmr_solids/case_studies/mathies_carbonate/cp_mas_powder_mhc_fplanck_exchange.m` | `cp_mas_powder_mhc_fplanck_exchange()` | Cross-polarisation contact curve under magic angle spinning in the presence of chemical exchange for H1, H4 and C19 in t | 115 |
 | `examples/nmr_solids/case_studies/mathies_carbonate/mas_powder_mhc_fplanck.m` | `mas_powder_mhc_fplanck()` | All protons in the unit cell of monohydrocalcite, magic angle spinning NMR simulation. Further details in: Calculation t | 88 |
 | `examples/nmr_solids/case_studies/mathies_carbonate/mas_powder_mhc_fplanck_exchange.m` | `mas_powder_mhc_fplanck_exchange()` | Water protons in the unit cell of monohydrocalcite, inc- luding position exchange and MAS. Further details in: Calculati | 87 |
@@ -599,6 +599,11 @@
 | `examples/optimal_control/bloch_siegert/yusuke_14n_broadening_demo.m` | `yusuke_14n_broadening_demo()` | Reduced effective-model illustration of the trade-off discussed by Nehra, Agarwal, and Nishiyama for 14N decoupling unde | 205 |
 | `examples/optimal_control/bloch_siegert/yusuke_1h_14n_optimal_vs_cw_demo.m` | `yusuke_1h_14n_optimal_vs_cw_demo()` | Reduced heteronuclear control demonstration inspired by the low-power offset-tolerant 14N decoupling papers of Nehra, Ag | 264 |
 | `examples/optimal_control/bloch_siegert/yusuke_optimal_vs_cw_demo.m` | `yusuke_optimal_vs_cw_demo()` | Bloch-Siegert-aware phase optimisation compared to a simple constant- phase low-power cycle. This is the control-side co | 240 |
+| `examples/optimal_control/case_studies/Smelko_ChemRxiv_2026/ct_selective.m` | `ct_selective()` | Optimal control design of the central transition selective pulse of the z-filtered 27Al MQMAS experiment. Reproduces, us | 105 |
+| `examples/optimal_control/case_studies/Smelko_ChemRxiv_2026/mq_conversion.m` | `mq_conversion()` | Optimal control design of the multiple-quantum conversion pulse of the z-filtered 27Al MQMAS experiment. Reproduces, usi | 110 |
+| `examples/optimal_control/case_studies/Smelko_ChemRxiv_2026/mq_excitation.m` | `mq_excitation()` | Optimal control design of the multiple-quantum excitation pulse of the z-filtered 27Al MQMAS experiment. Reproduces, usi | 110 |
+| `examples/optimal_control/case_studies/Smelko_ChemRxiv_2026/mqmas_drifts.m` | `drifts=mqmas_drifts(spin_system,parameters)` | Drift Hamiltonians of a quadrupolar nucleus under magic angle spin- ning, resolved in rotor phase, for every combination | 193 |
+| `examples/optimal_control/case_studies/Smelko_ChemRxiv_2026/mqmas_efficiency.m` | `mqmas_efficiency()` | Efficiency of the z-filtered 27Al MQMAS pulse sequence with hard pulses and with the optimal control pulses produced by  | 150 |
 | `examples/optimal_control/case_studies/Tosner_JMR_2009/bb_inversion_pulse.m` | `bb_inversion_pulse()` | Broadband inversion pulse design for liquid-state NMR. Reprodu- ces, using Spinach, the second example from: A single pr | 101 |
 | `examples/optimal_control/case_studies/Tosner_JMR_2009/bb_refocusing_pulse.m` | `bb_refocusing_pulse()` | Spinach implementation of the broadband refocusing example from GRAPE is used to design a 200 µs broadband x-phase π pul | 97 |
 | `examples/optimal_control/case_studies/Tosner_JMR_2009/coherence_transfer.m` | `coherence_transfer()` | The first optimal control example from A heteronuclear two-spin system (1H–13C) with an scalar and both nuclei set on re | 79 |

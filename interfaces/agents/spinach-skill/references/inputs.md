@@ -344,10 +344,17 @@ Its `props` can be handed to `g2spinach` or mined directly, as in
 `ocparse(filename,pad_factor)` reads ORCA spin-density cube files in "3D simple
 format".
 
-`c2spinach(file_name)` reads the new-format section of a CASTEP `.magres` file
-and returns `std_geom` (angstrom), `symbols`, `cst` (shielding relative to the
-bare nucleus in vacuum, ppm) and `efg` (a.u.⁻³). CASTEP shieldings must be
-referenced by hand, and EFGs converted:
+`c2spinach(file_name)` reads the `[atoms]` and `[magres]` blocks of a CCP-NC
+magres v1.0 file (CASTEP, Quantum ESPRESSO GIPAW) and returns `std_geom`
+(angstrom), `symbols`, `natoms`, and, when the file has them, `cst` (shielding
+relative to the bare nucleus in vacuum, ppm, in the printed component order),
+`efg` (a.u.), and `k_couplings` (isotropic reduced couplings from the `isc`
+records, in the same units as `gparse`, so that `g2spinach` converts them into
+J-couplings for the isotopes it is given). Tensors are matched to atoms by
+label and index, so a file whose `ms` records are reordered or partial still
+lands on the right atoms; atoms without a tensor get an empty cell. Test for
+optional fields with `isfield`. CASTEP shieldings must be referenced by hand,
+and EFGs converted:
 
 ```matlab
 props=c2spinach('mhc.magres');
@@ -407,6 +414,12 @@ processing parameter files, the digital filter group delay, and the gradient
 and delay lists when present. `mesh=comsol_import(comsol)` imports a COMSOL 2D
 mesh for the `meshflow` context from `comsol.mesh_file` and `comsol.velo_file`,
 with `comsol.crop` and `comsol.inactivate` controlling the retained region.
+`conc_plot(spin_system,conc,obs)` then draws concentrations on that mesh as
+vertical bars after `mesh_plot` has drawn it, colouring each cell by one
+(phase), two (phase and amplitude), or three (phase, amplitude, and
+longitudinal) observables; a zero peak amplitude gives zero saturation and a
+constant longitudinal observable gives full value, so such inputs render
+instead of producing NaN face colours.
 
 Complete ready-made systems live in `etc/molecules/` (`strychnine(spins)`,
 `cyprinol()`, `lactate(spins)`, `allyl_pyruvate(spins)`,

@@ -406,6 +406,30 @@ keyholes, multiple targets, phase cycling, wave bases); solid-state control is
 rather than optimised pulses are propagated in
 `shaped_pulses/shaped_pulse_gaussian.m` and its chirp, Q5 and SLR siblings.
 
+Optimal control of a quadrupolar nucleus under MAS in Hilbert space is the
+`case_studies/Smelko_ChemRxiv_2026` folder (27Al 3QMAS and 5QMAS excitation,
+conversion, and central-transition selective pulses). `mqmas_drifts.m` builds
+the rotor-phase-resolved drift Hamiltonians: a `zeeman-hilb` system with
+`labframe` assumptions, `hamiltonian` and `carrier`, all three Euler angles
+of a two-angle grid (the azimuth sits in `gammas`; the grid must have uniform
+weights, such as the `rep_2ang_*` grids, because the optimal control ensemble
+is averaged without quadrature weights), the rotor rotation in the first
+angle, and `rotframe` to second order at every rotor phase tick; each
+ensemble member is one grid orientation at one initial rotor phase and goes
+into `control.drifts` as a cell array with one Hamiltonian per pulse slice, so
+the drifts are time-dependent and the ensemble is grid points times rotor
+phases. Sparse orientation or phase sampling overfits (a 100 x 20 ensemble
+scored 0.52 on itself and 0.29 on 400 x 32), so optimise at the sampling
+density you evaluate at. Targets are density matrix elements: the Hermitian
+±MQ coherence combination for excitation, the central-transition population
+difference for conversion, the central-transition coherence for the soft
+pulse. `mqmas_efficiency.m` propagates the whole z-filtered sequence with
+`step` and `coherence` filters and compares hard pulses, sliced at the drift
+tick interval, with the optimal control waveforms. The 16000-member drift
+ensemble needs the per-worker slicing in `optimcon`; set the pool size with
+`sys.parallel={'processes',N}` in `sys` and never open a pool before
+`create`, which destroys foreign pools.
+
 ## Fitting to experimental data
 
 `fitting/fumarate_global.m` is the template. A driver loads and normalises the
@@ -454,7 +478,10 @@ context: the Hamiltonian is built with `hamiltonian(assume(spin_system,'nmr'))`,
 `Lx` and `Ly` operators are passed to the kernel function
 `m2s(spin_system,H,Cx,Cy,rho0,<J coupling, Hz>,<Zeeman frequency difference,
 Hz>)`, and the population is read off by projecting onto
-`singlet(spin_system,<spin a>,<spin b>)`. `s2m_example.m` is the reverse.
+`singlet(spin_system,<spin a>,<spin b>)`. `s2m_example.m` is the reverse. Both
+functions accept either sign of the coupling and of the frequency difference:
+the echo-train repetition count uses their magnitudes and the phase of the
+90-degree pulse next to the lone tau delay follows the sign of J.
 Lifetimes limited by intramolecular mechanisms are in the `decoherence_*.m`
 files; `singlet_imaging_1.m` combines singlet order with the imaging context.
 

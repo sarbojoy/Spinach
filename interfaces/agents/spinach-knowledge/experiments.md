@@ -60,8 +60,8 @@
 | `experiments/imaging/cpmg_dec.m` | `mri=cpmg_dec(spin_system,parameters,H,R,K,G,F)` | The effect of Carr-Purcell-Meiboom-Gill (CPMG) pulse sequence on the MRI phantom. The function runs the CPMG and then pr | 145 |
 | `experiments/imaging/dpfgse_select.m` | `fid=dpfgse_select(spin_system,parameters,H,R,K,G,F)` | DPFGSE signal selection, based on Equation 3 from the paper by Stott et al. (https://doi.org/10.1006/jmre.1997.1110). Sy | 186 |
 | `experiments/imaging/dpfgse_suppress.m` | `fid=dpfgse_suppress(spin_system,parameters,H,R,K,G,F)` | DPFGSE signal suppression, based on Equation 3 from the paper by Stott et al. (https://doi.org/10.1006/jmre.1997.1110).  | 188 |
-| `experiments/imaging/epi_2d.m` | `mri=epi_2d(spin_system,parameters,H,R,K,G,F)` | Diffusion weighted echo planar 2D imaging pulse sequence with variable diffusion encoding direction. Syntax: mri=epi_2d( | 214 |
-| `experiments/imaging/epi_3d.m` | `fid=epi_3d(spin_system,parameters,H,R,K,G,F)` | Diffusion weighted 3D echo planar imaging pulse sequence. Syntax: fid=epi_3d(spin_system,parameters,H,R,K,G,F) This sequ | 338 |
+| `experiments/imaging/epi_2d.m` | `mri=epi_2d(spin_system,parameters,H,R,K,G,F)` | Diffusion weighted echo planar 2D imaging pulse sequence with variable diffusion encoding direction. Syntax: mri=epi_2d( | 224 |
+| `experiments/imaging/epi_3d.m` | `fid=epi_3d(spin_system,parameters,H,R,K,G,F)` | Diffusion weighted 3D echo planar imaging pulse sequence. Syntax: fid=epi_3d(spin_system,parameters,H,R,K,G,F) This sequ | 348 |
 | `experiments/imaging/fse.m` | `mri=fse(spin_system,parameters,H,R,K,G,F)` | Fast spin echo (FSE) pulse sequence. Syntax: mri=fse(spin_system,parameters,H,R,K,G,F) This sequence must be called from | 178 |
 | `experiments/imaging/grad_echo.m` | `fid=grad_echo(spin_system,parameters,H,R,K,G,F)` | Gradient echo pulse sequence. Syntax: fid=grad_echo(spin_system,parameters,H,R,K,G,F) This sequence must be called from  | 140 |
 | `experiments/imaging/phase_enc_2d.m` | `mri=phase_enc_2d(spin_system,parameters,H,R,K,G,F)` | 2D phase encoding imaging pulse sequence with optional diffusion weighting during the echo time. Syntax: mri=phase_enc_2 | 222 |
@@ -151,8 +151,8 @@
 | `experiments/relaxan.m` | `[r1,r2,t1,t2,R]=relaxan(spin_system,euler_angles)` | Automated relaxation theory analysis. Prints longitudinal and transverse relaxation rates and times for all spins in the | 98 |
 | `experiments/respiration.m` | `fid=respiration(spin_system,parameters,H,R,K)` | RESPIRATION cross-polarisation method described in the paper from the Aarhus group (http://dx.doi.org/10.1021/jz3000905) | 154 |
 | `experiments/sat_rec.m` | `fids=sat_rec(spin_system,parameters,H,R,K)` | Saturation-recovery pulse sequence with analytical saturation (just the unit state as the initial condition). Syntax: fi | 130 |
-| `experiments/singlets/m2s.m` | `rho=m2s(spin_system,L,Hx,Hy,rho,J,delta_v)` | M2S sequence of Pileio and Levitt. Syntax: rho=m2s(spin_system,L,Hx,Hy,rho,J,delta_v) Parameters: L -background Liouvill | 81 |
-| `experiments/singlets/s2m.m` | `rho=s2m(spin_system,L,Hx,Hy,rho,J,delta_v)` | S2M sequence of Pileio and Levitt. Syntax: rho=s2m(spin_system,L,Hx,Hy,rho,J,delta_v) Parameters: L -background Liouvill | 81 |
+| `experiments/singlets/m2s.m` | `rho=m2s(spin_system,L,Hx,Hy,rho,J,delta_v)` | M2S sequence of Pileio and Levitt. Syntax: rho=m2s(spin_system,L,Hx,Hy,rho,J,delta_v) Parameters: L -background Liouvill | 83 |
+| `experiments/singlets/s2m.m` | `rho=s2m(spin_system,L,Hx,Hy,rho,J,delta_v)` | S2M sequence of Pileio and Levitt. Syntax: rho=s2m(spin_system,L,Hx,Hy,rho,J,delta_v) Parameters: L -background Liouvill | 83 |
 | `experiments/slowpass.m` | `spectrum=slowpass(spin_system,parameters,H,R,K)` | Slow passage detection -calculates spectrum values at the user- specified frequency positions using the Fourier transfor | 199 |
 | `experiments/sp_acquire.m` | `fid=sp_acquire(spin_system,parameters,H,R,K)` | Soft pulse followed by acquisition. The soft pulse is simulated using the Fokker-Planck formalism. Syntax: fid=sp_acquir | 178 |
 | `experiments/spen/dosy_oneshot.m` | `fid=dosy_oneshot(spin_system,parameters,H,R,K,G,F)` | One-shot DOSY pulse sequence. Syntax: fid=dosy_oneshot(spin_system,parameters,H,R,K,G,F) Parameters: parameters.rho0 ini | 226 |

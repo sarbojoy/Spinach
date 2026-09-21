@@ -15,7 +15,7 @@ function kbr_mas_fitting()
 
 % Load and normalise the data
 kbr_data=readmatrix('KBr_400MHz_2kHz.txt');
-spec_expt=kbr_data(:,2)/100;
+spec_expt=flipud(kbr_data(:,2))/100;
 
 % Set instrumental variables
 sys.magnet=9.3659;          % magnet field, Tesla
@@ -39,7 +39,10 @@ options=optimset('Display','iter','MaxIter',5000,'MaxFunEvals',Inf);
 kfigure(); scale_figure([1.75 1.50]);
 
 % Run the optimisation
-fminsearch(@errfun,guess,options);
+best_fit=fminsearch(@errfun,guess,options);
+
+% Plot and print the fitted parameters
+errfun(best_fit);
 
     % Least squares error function
     function err=errfun(params)

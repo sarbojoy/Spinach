@@ -308,7 +308,7 @@
 | `kernel/plotting/bloch_axis.m` | `[ax,ay,az]=bloch_axis(x,y,z)` | Reconstructs the instantaneous Bloch equation rotation axis of from a 3D magnetisation trajectory. Syntax: [ax,ay,az]=bl | 64 |
 | `kernel/plotting/bwr_cmap.m` | `cmap=bwr_cmap()` | Blue -> White -> Red colour map with 255 points and white colour corresponding to zero. Syntax: cmap=bwr_cmap() The outp | 42 |
 | `kernel/plotting/contspacing.m` | `[all_conts,pos_conts,neg_conts]=...` | Non-linear adaptive contour spacing. Useful for NMR data where small cross-peaks must be adequately contoured next to la | 108 |
-| `kernel/plotting/crop_2d.m` | `[spec,parameters]=crop_2d(spin_system,spec,parameters,crop_ranges)` | Crops 2D spectra to user-specified ranges (in ppm), respecting the digital resolution. Syntax: [spec,parameters]=crop_2d | 137 |
+| `kernel/plotting/crop_2d.m` | `[spec,parameters]=crop_2d(spin_system,spec,parameters,crop_ranges)` | Crops 2D spectra to user-specified ranges (in ppm), respecting the digital resolution. Syntax: [spec,parameters]=crop_2d | 153 |
 | `kernel/plotting/cst_display.m` | `cst_display(props,atoms,scaling,conmatrix,options)` | Draws shielding tensors and their eigensystems. Two styles are implemented: A. Ellipsoids (symmetric tensors only): 1. A | 305 |
 | `kernel/plotting/cylgrid.m` | `cylgrid(zmin,zmax,rmax)` | Draws a cylindrical grid with 10% spacing added around the indicated data extent values. Syntax: cylgrid(zmin,zmax,rmax) | 99 |
 | `kernel/plotting/efg_display.m` | `efg_display(props,atoms,scaling,conmatrix,options)` | Electric field gradient tensors and their eigensystems. Two styles are implemented: A. Ellipsoids (symmetric tensors onl | 308 |
@@ -342,7 +342,7 @@
 | `kernel/plotting/slice_2d.m` | `slice_2d(spin_system,spectrum,parameters,ncont,delta,k,ncol,m,signs)` | Contour plotting utility with non-linear adaptive contour spacing and 1D slice extraction using mouse. Syntax: slice_2d( | 221 |
 | `kernel/plotting/stack_2d.m` | `stack_2d(spin_system,spectrum,parameters,stack_dim,alpha_fun)` | Stack plotting utility for 2D NMR spectra. Syntax: stack_2d(spin_system,spectrum,parameters,stack_dim,alpha_fun) Paramet | 226 |
 | `kernel/plotting/sweep2ticks.m` | `axis_hz=sweep2ticks(offs,sweep,npoints)` | Converts offset-sweep-npoints specification into axis ticks in Hz. The function returns the frequency axis of the spectr | 55 |
-| `kernel/plotting/volplot.m` | `volplot(data_cube,axis_ranges,clip_ranges)` | Volumetric 3D plot function for scalar fields. Sign is mapped into colour and amplitude into opacity. Separate scaling f | 190 |
+| `kernel/plotting/volplot.m` | `volplot(data_cube,axis_ranges,clip_ranges)` | Volumetric 3D plot function for scalar fields. Sign is mapped into colour and amplitude into opacity. Separate scaling f | 195 |
 | `kernel/plotting/write_movie.m` | `write_movie(file_name)` | Orbits the camera around a 3D plot and writes a correctly looping 359-frame movie. Intended for generating presenta- tio | 57 |
 | `kernel/plotting/zoom_3d.m` | `[density,ext]=zoom_3d(density,ext,zoom_ranges)` | Zooms a 3D data cube to the fractional limits specified by the user. Syntax: [density,ext]=zoom_3d(density,ext,zoom_rang | 87 |
 | `kernel/ppower.m` | `P=ppower(spin_system,P,N)` | Computes integer propagator powers via an efficient powers-of-two based strategy. Syntax: P=ppower(spin_system,P,N) Para | 113 |
@@ -486,7 +486,7 @@
 | `kernel/utilities/polinfo.m` | `polinfo(p,level,label)` | Draws an ASCII diagram of a polyadic object. Syntax: polinfo(p) Parameters: p - polyadic object Outputs: an ASCII diagra | 111 |
 | `kernel/utilities/poolsize.m` | `n=poolsize()` | Returns the current parallel pool size. Syntax: n=poolsize() Parameters: none Outputs: n - number of workers in the curr | 40 |
 | `kernel/utilities/prune_subgraphs.m` | `subgraphs=prune_subgraphs(subgraphs)` | Removes subgraphs that are contained entirely within other subgraphs. Syntax: subgraphs=prune_subgraphs(subgraphs) Param | 59 |
-| `kernel/utilities/remncomm.m` | `A=remncomm(A,EvB)` | Removes from the Hermitian operator A the part that does not com- mute with the Hermitian operator B. Syntax: C=remncomm | 54 |
+| `kernel/utilities/remncomm.m` | `A=remncomm(A,EvecB,EvalB)` | Removes from the Hermitian operator A the part that does not com- mute with the Hermitian operator B. Syntax: C=remncomm | 73 |
 | `kernel/utilities/remtrace.m` | `A=remtrace(A)` | Subtracts an appropriate multiple of the unit matrix to make the input matrix traceless. Syntax: A=remtrace(A) Parameter | 39 |
 | `kernel/utilities/repcols.m` | `B=repcols(A,col_nums,rep_counts)` | Replicates specified columns of a matrix or cell array a specified number of times. Syntax: B=repcols(A,col_nums,rep_cou | 66 |
 | `kernel/utilities/report.m` | `report(spin_system,report_string)` | Writes a log message to the console or an ACSII file. The message includes the call stack of the function that produced  | 126 |
